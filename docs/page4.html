@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation</title>
+    <link rel="stylesheet" href="style4.css">
+    <script src="page4.js"></script>
+</head>
+<body>
+    <div class="content">
+        <header>
+            <a href="page1.html">
+                <img src="4.jpg" alt="Logo" class="logo">
+            </a>
+        </header>
+        <h2>RESERVATION</h2>
+        <form action="traitement.php" method="post" id="formulaire" onsubmit="return verif();">
+            <label>Nom d'utilisateur</label><br>
+            <input type="text" placeholder="Nom d'utilisateur" id="Nom" name="nom_utilisateur"><br>
+            <label>CIN</label><br>
+            <input type="text" placeholder="CIN" id="CIN" name="cin"><br>
+            <label>Jour du reservation</label><br>
+            <input type="date" class="datef"  placeholder="Jour du reservation" id="jour"  name="jour_reservation"><br>
+            <h3>Sélectionner un véhicule</h3>
+            <div class="vehicles" id="vehiculeChoisi">
+                <div class="vehiclec">
+                    <img src="6.jpg" alt="Voiture">
+                    <p>Voiture</p>
+                    <div class="button-container">
+                        <input type="checkbox" name="checkbox" id="Voiture" value="1">
+                    </div>
+                </div>
+                <div class="vehiclec">
+                    <img src="9.PNG" alt="Motocyclette">
+                    <p>Motocyclette</p>
+                    <div class="button-container">
+                        <input type="checkbox" name="checkbox" id="Motocyclette" value="2">
+                    </div>
+                </div>
+                <div class="vehiclec">
+                    <img src="7.PNG" alt="Bicyclette" >
+                    <p>Bicyclette</p>
+                    <div class="button-container">
+                        <input type="checkbox" name="checkbox" id="Bicyclette" value="3">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="payment" >Réserver</button>
+        
+        </div>
+
+        </form>
+        
+</body>
+</html>

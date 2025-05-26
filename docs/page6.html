@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Scanner QR</title>
+    <link rel="stylesheet" href="style6.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>   
+</head>
+<body>
+    <div class="scanner-content">
+        <header>
+            <a href="page1.html">
+                <img src="4.jpg" alt="Logo" class="logo">
+            </a>
+        </header>
+        <h2>CODE SCANNER QR</h2>
+        <div class="qr-box" id="qr-box"></div>
+    </div>
+    <script>
+        // Génère un contenu QR unique
+        const qrContent = "QR_" + Date.now() + "_" + Math.floor(Math.random() * 100000);
+    
+        // Affiche le QR dans l'élément HTML
+        if (typeof QRCode !== 'undefined') {
+            new QRCode(document.getElementById("qr-box"), {
+                text: qrContent,
+                width: 200,
+                height: 200
+            });
+            console.log("QR généré :", qrContent);
+        }
+    
+        // Ajoute dans Firestore avec date d’expiration
+        firebase.firestore().collection("qrcodes").add({
+            contenu: qrContent,
+            date: new Date(),
+            expireAt: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000) // expire dans 2 jours
+        })
+        .then((docRef) => {
+            console.log("QR stocké avec ID :", docRef.id);
+        })
+        .catch((error) => {
+            console.error("Erreur Firestore :", error);
+        });
+    </script>
+    
+    
+</body>
+</html>

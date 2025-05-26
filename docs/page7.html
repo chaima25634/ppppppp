@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement</title>
+    <link rel="stylesheet" href="style7.css">
+    <script src="page7.js"></script>
+</head>
+<body>
+    <div class="payment-content">
+        <a href="page1.html">
+            <img src="4.jpg" alt="Logo" class="logo">
+        </a>
+        <h2>PAIEMENT</h2>
+        <br>
+        <label>Montant <span class="Montant">20.000TN</span></label>
+        <br>
+        <form action="page6.html" method="post" id="formulaire" onsubmit="return verif()">
+            <label>Type de votre carte</label>
+        
+            <input type="text"  class="inputf" id="typecarte">
+            
+            <label>Numéro de la carte</label>
+           
+            <input type="text" class="inputf" id="numcarte">
+            
+            <label>Titulaire de la carte</label>
+           
+            <input type="text" class="inputf" id="ticarte">
+            <br>
+            <br>
+            <button type="submit" class="payer" >Payer</button>
+        </form>
+         
+    </div>
+</body>
+</html>
