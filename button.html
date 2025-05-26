@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Animation</title>
+    <link rel="stylesheet" href="button.css">
+</head>
+<body>
+    <div class="button-container">
+        <button class="animated-button">
+            <span class="icon">🚗🏍️🚲</span>
+        </button>
+    </div>
+    <script>
+        const button = document.querySelector('.animated-button');
+        const icon = document.querySelector('.icon');
+
+        button.addEventListener('click', () => {
+            icon.classList.add('jump-out');
+            setTimeout(() => icon.classList.remove('jump-out'), 800); // Durée en phase avec l'animation CSS
+        });
+    </script>
+</body>
+</html>
